@@ -22,7 +22,18 @@
 ================================================== */
     
 @media only screen and (max-width: 959px) {
+/* Disable CSS animations */
+.animated {
+    -webkit-animation-duration: 0;
+    animation-duration: 0;
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
+}
 
+/* Disable Parallax */
+.parallax-bg1, .parallax-bg2, .parallax-bg3 {
+    background-position: 50% 0 !important;
+}
 
 }
 
@@ -37,7 +48,18 @@
 .carousel-control.left span, .carousel-control.icon-prev span {
     left: 15%;
 }
+/* Disable CSS animations */
+.animated {
+    -webkit-animation-duration: 0;
+    animation-duration: 0;
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
+}
 
+/* Disable Parallax */
+.parallax-bg1, .parallax-bg2, .parallax-bg3 {
+    background-position: 50% 0 !important;
+}
 }
 
 /*  #Mobile (Portrait)
@@ -45,7 +67,16 @@
 
 @media only screen and (max-width: 440px) {
 
-	
+	/* Disable CSS animations */
+.animated {
+    -webkit-animation-duration: 0;
+    animation-duration: 0;
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
 }
 
-
+/* Disable Parallax */
+.parallax-bg1, .parallax-bg2, .parallax-bg3 {
+    background-position: 50% 0 !important;
+}
+}
