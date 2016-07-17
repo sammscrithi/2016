@@ -53,6 +53,8 @@ body {
   background-clip: border-box;
   background-origin: padding-box;
   background-position: 50% 0;
+-webkit-background-size: auto;
+-moz-background-size: auto;
   background-repeat: no-repeat;
   background-size: cover !important;
 }
