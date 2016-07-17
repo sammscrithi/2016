@@ -49,10 +49,10 @@ body {
 .parallax-bg1,
 .parallax-bg2,
 .parallax-bg3 {
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-clip: border-box;
   background-origin: padding-box;
-  background-position: 50% 0;
+  background-position: center;
 -webkit-background-size: auto;
 -moz-background-size: auto;
   background-repeat: no-repeat;
