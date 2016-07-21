@@ -21,6 +21,7 @@
                     f = String.fromCharCode;
                 return e && e.fillText ? (e.textBaseline = "top", e.font = "600 32px Arial", "flag" === a ? (e.fillText(f(55356, 56806, 55356, 56826), 0, 0), d.toDataURL().length > 3e3) : "diversity" === a ? (e.fillText(f(55356, 57221), 0, 0), c = e.getImageData(16, 16, 1, 1).data.toString(), e.fillText(f(55356, 57221, 55356, 57343), 0, 0), c !== e.getImageData(16, 16, 1, 1).data.toString()) : ("simple" === a ? e.fillText(f(55357, 56835), 0, 0) : e.fillText(f(55356, 57135), 0, 0), 0 !== e.getImageData(16, 16, 1, 1).data[0])) : !1
             }
+
             function e(a) {
                 var c = b.createElement("script");
                 c.src = a, c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)
@@ -84,19 +85,91 @@
             width: 1px;
         }
     </style>
-    <style type="text/css" media="screen">
-        #rotator {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
+    <style type="text/css">
+        .enews .screenread {
+            $breakpoint-alpha: 480px; // adjust to your needs
+            .rwd-table {
+                margin: 1em 0;
+                min-width: 300px; // adjust to your needs
+                tr {
+                    border-top: 1px solid #ddd;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+                }
+                td {
+                    display: block;
+                    &:first-child {
+                        padding-top: .5em;
+                    }
+                    &:last-child {
+                        padding-bottom: .5em;
+                    }
+                    &:before {
+                        content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+                        font-weight: bold;
+                        // optional stuff to make it look nicer
+                        width: 6.5em; // magic number :( adjust according to your own content
+                        display: inline-block;
+                        // end options
+                        @media (min-width: $breakpoint-alpha) {
+                            display: none;
+                        }
+                    }
+                }
+                th,
+                td {
+                    text-align: left;
+                    @media (min-width: $breakpoint-alpha) {
+                        display: table-cell;
+                        padding: .25em .5em;
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+            // presentational styling
+            @import 'http://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+            body {
+                padding: 0 2em;
+                font-family: Montserrat, sans-serif;
+                -webkit-font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
+                color: #444;
+            }
+            h1 {
+                font-weight: normal;
+                letter-spacing: -1px;
+                color: #34495E;
+            }
+            .rwd-table {
+                background: #34495E;
+                color: #fff;
+                border-radius: .4em;
+                overflow: hidden;
+                tr {
+                    border-color: lighten(#34495E, 10%);
+                }
+                th,
+                td {
+                    margin: .5em 1em;
+                    @media (min-width: $breakpoint-alpha) {
+                        padding: 1em !important;
+                    }
+                }
+                th,
+                td:before {
+                    color: #dd5;
+                }
+            }
         }
-    </style>
-    <link rel="shortcut icon" href="files/favicon.ico">
-    <style type="text/css" media="screen">
-        .simple-social-icons ul li a,
+        
+        </style <link rel="shortcut icon" href="files/favicon.ico"> <style type="text/css" media="screen"> .simple-social-icons ul li a,
         .simple-social-icons ul li a:hover {
             background-color: #fff !important;
             border-radius: 60px;
@@ -128,10 +201,9 @@
                         <div class="widget-wrap">
                             <nav class="nav-header" itemscope itemtype="http://schema.org/SiteNavigationElement">
                                 <ul id="menu-primary-navigation" class="menu genesis-nav-menu">
-<li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="event.htm#events" itemprop="url"><span itemprop="name">Events</span></a>
+                                    <li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="event.htm#events" itemprop="url"><span itemprop="name">Events</span></a>
 
                                     </li>
-                                    <li id="menu-item-516" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-516"><a href="event.htm#schedule" itemprop="url"><span itemprop="name">Schedule</span></a></li>
                                     <li id="menu-item-557" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-557"><a href="event.htm#patrons" itemprop="url"><span itemprop="name">Patrons</span></a>
 
                                     </li>
@@ -150,51 +222,177 @@
                         <header id="events" class="entry-header">
                             <h1 class="entry-title" itemprop="headline">Events</h1>
                         </header>
-                        <div class="entry-content" itemprop="text">
-                            <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Day 1</th>
-      <th>Day 2</th>
-      <th>Day 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td>TBD</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td>TBD</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td>TBD</td>
-    </tr>
-  </tbody>
-</table>
-                         
-                            <header id="patrons" class="entry-header">
+                        <h3>Day 1 - 19<sup>th</sup> August</h3>
+                        <table id="d1" class="rwd-table">
+                            <tr>
+                                <th>Venue</th>
+                                <th>9 AM</th>
+                                <th>11 AM</th>
+                                <th>2 PM</th>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Auditorium Main Stage</b></td>
+                                <td data-th="9 AM">Group Song</td>
+                                <td data-th="11 AM">General quiz Finals</td>
+                                <td data-th="2 PM">Introduction & Spot Dance</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Auditorium Seats</b></td>
+                                <td data-th="9 AM">General quiz prelims</td>
+                                <td data-th="11 AM">Creative Writing (English / Kannada / Hindi)</td>
+                                <td data-th="2 PM">Creative Writing(conti..)</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Millennium Lecture Hall</b></td>
+                                <td data-th="9 AM">Case Presentation</td>
+                                <td data-th="11 AM">Mock Press</td>
+                                <td data-th="2 PM">Extempore Kannada</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Room 1</b></td>
+                                <td data-th="9 AM">Pictionary Prelims</td>
+                                <td data-th="11 AM">Pictionary Finals</td>
+                                <td data-th="2 PM">Extempore English</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Room 2</b></td>
+                                <td data-th="9 AM">Sketching</td>
+                                <td data-th="11 AM">College</td>
+                                <td data-th="2 PM">Dumb Charades Prelims</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Outdoor</b></td>
+                                <td  id="d2"></td>
+                                <td data-th="Evening">Inaugaration & Group Dance</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <h3>Day 2 - 20<sup>th</sup> August</h3>
+                        <table class="rwd-table">
+                            <tr>
+                                <th>Venue</th>
+                                <th>9 AM</th>
+                                <th>11 AM</th>
+                                <th>2 PM</th>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Auditorium Main Stage</b></td>
+                                <td data-th="9 AM">Dumb Charades finals (till 10 AM)</td>
+                                <td data-th="11 AM">Solo Singing (10AM - 2PM)</td>
+                                <td data-th="2 PM">Pair Dance & Movie Making</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Auditorium Seats</b></td>
+                                <td data-th="9 AM">Medical quiz prelims</td>
+                                <td data-th="11 AM">Poetry (English / Kannada / Hindi)</td>
+                                <td data-th="2 PM">Medical Crossword</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Millennium Lecture Hall</b></td>
+                                <td></td>
+                                <td data-th="11 AM">Medical Quiz Finals</td>
+                                <td data-th="2 PM">Jam English</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Room 1</b></td>
+                                <td data-th="9 AM">Jam Kannada</td>
+                                <td data-th="11 AM">Debate English</td>
+                                <td data-th="2 PM">Painting</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Room 2</b></td>
+                                <td data-th="9 AM">Jam Hindi</td>
+                                <td></td>
+                                <td data-th="2 PM">Debate Kannada</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Indoor</b></td>
+                                <td></td>
+                                <td data-th="Evening">The Improv</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Outdoor</b></td>
+                                <td id="d3"></td>
+                                <td data-th="Evening">Fashion Show</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <h3>Day 3 - 21<sup>st</sup> August</h3>
+                        <table class="rwd-table">
+                            <tr>
+                                <th>Venue</th>
+                                <th>9 AM</th>
+                                <th>11 AM</th>
+                                <th>2 PM</th>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Auditorium Main Stage</b></td>
+                                <td data-th="9 AM">Duet Singing</td>
+                                <td data-th="11 AM">Solo Dance & Mad Ads</td>
+                                <td data-th="2 PM">Anthakshari Finals (Kannada(2-3:30PM) & Hindi(3:30-5PM))</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Auditorium Seats</b></td>
+                                <td data-th="9 AM">Anthakshari Kannada Prelims</td>
+                                <td data-th="11 AM">Anthakshari Hindi Prelims</td>
+                                <td data-th="2 PM">Love letter Writing</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Millennium Lecture Hall</b></td>
+                                <td data-th="9 AM">90 seconds</td>
+                                <td data-th="11 AM">Instrumental</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Room 1</b></td>
+                                <td data-th="9 AM">Face Painting</td>
+                                <td></td>
+                                <td data-th="2 PM">Rangoli</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Room 2</b></td>
+                                <td data-th="9 AM">Mehendi</td>
+                                <td data-th="11 AM">Pot Painting</td>
+                                <td data-th="2 PM">Crossword</td>
+                            </tr>
+                            <tr>
+                                <td data-th="Venue"><b>Outdoor</b></td>
+                                <td></td>
+                                <td data-th="Evening">	Valedictory Function & The Lucia Team</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <hr>
+                        <header id="patrons" class="entry-header">
                             <h1 class="entry-title" itemprop="headline">Patrons</h1>
                         </header>
-                            <p>online soon</p>
-                            <header id="schedule" class="entry-header">
-                            <h1 class="entry-title" itemprop="headline">Schedule</h1>
-                        </header>
-                             <p>online soon</p>
-                            <header class="entry-header">
+                        <p>online soon</p>
+                        <header class="entry-header">
                             <h1 class="entry-title" itemprop="headline">Rules</h1>
                         </header>
-                             <p>online soon</p>
-                        </div>
+                                <table>
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Contact</th>
+                            </tr>
+                            <tr>
+                                <td data-th="Position"><b>Cultural Secretary</b></td>
+                                <td data-th="Name"><i>Vikas H P</i></td>
+                                <td data-th="Contact">+91 8553536342</td>
+                            </tr>
+  <tr>
+    <td data-th="Position"><b>Academic Secretary</b></td>
+    <td data-th="Name"><i>Hitha B S</i></td>
+    <td data-th="Contact">+91 9482010495</td>
+  </tr>
+  <tr>
+      <td data-th="Position"><b>Sports Secretary</b></td>
+    <td data-th="Name"><i>Shivkumar H S</i></td>
+    <td data-th="Contact">+91 9481236305</td>
+  </tr>
+</table>        
                     </article>
                 </main>
             </div>
@@ -217,26 +415,26 @@
             </div>
         </div>
         <div style="background-position: 50% -4.1px;" class="home-odd home-section-3 widget-area">
-                        <div class="wrap">
-                            <section id="text-6" class="widget widget_text">
-                                <div class="widget-wrap">
-                                    <h4 class="widget-title widgettitle">Connect With Us.</h4>
-                                    <div class="textwidget">
-                                        <p>Here's where you can find us on social media.</p>
-                                    </div>
-                                </div>
-                            </section>
-                            <section id="simple-social-icons-2" class="widget simple-social-icons">
-                                <div class="widget-wrap">
-                                    <ul class="aligncenter">
-                                        <li class="social-facebook"><a href="https://www.facebook.com/sammscrithi16/"></a></li>
-                                        <li class="social-instagram"><a href="https://instagram.com/sammscrithi"></a></li>
-                                        <li class="social-twitter"><a href="https://twitter.com/saMMsCRIthi"></a></li>
-                                    </ul>
-                                </div>
-                            </section>
+            <div class="wrap">
+                <section id="text-6" class="widget widget_text">
+                    <div class="widget-wrap">
+                        <h4 class="widget-title widgettitle">Connect With Us.</h4>
+                        <div class="textwidget">
+                            <p>Here's where you can find us on social media.</p>
                         </div>
                     </div>
+                </section>
+                <section id="simple-social-icons-2" class="widget simple-social-icons">
+                    <div class="widget-wrap">
+                        <ul class="aligncenter">
+                            <li class="social-facebook"><a href="https://www.facebook.com/sammscrithi16/"></a></li>
+                            <li class="social-instagram"><a href="https://instagram.com/sammscrithi"></a></li>
+                            <li class="social-twitter"><a href="https://twitter.com/saMMsCRIthi"></a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
         <footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
             <div class="wrap">
                 <nav class="nav-secondary" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
